@@ -1,67 +1,56 @@
 # Project One Storyboard | Text-Based Adventure Game
 
-> Complete the `TODO:` prompts using your own game idea. This file is a graded
-> Project One deliverable and later becomes a reference for Project Two.
+Complete the TODO: prompts using your own game idea. This file is a graded Project One deliverable and later becomes a reference for Project Two.
 
 ## Theme and Storyline
 
-**Theme:**
+*Theme:*
+Post-Apocalyptic Fallout Survival
 
-TODO: Name and briefly describe your game's theme.
-
-**Storyline:**
-
-TODO: In one short paragraph, explain the setting, the player's goal, the items
-the player must gather, and the threat created by the villain.
+*Storyline:*
+The game is set in a post-apocalyptic wasteland where the player controls a lonely wanderer trying to reactivate an underground nuclear fallout bunker, Vault 101, to survive an approaching radioactive dust storm. To power up the vault's main door and life-support systems, the player must navigate through 8 abandoned surface facilities, retrieve 6 critical survival components, and avoid the radiation-mutated apex predator roaming the complex.
 
 ## Rooms
 
 Project One requires a minimum of eight rooms.
 
-1. TODO: Start room
-2. TODO: Room
-3. TODO: Room
-4. TODO: Room
-5. TODO: Room
-6. TODO: Room
-7. TODO: Room
-8. TODO: Villain room
-
-Add more rooms if your design needs them.
+1. Wasteland Entrance (Start Room)
+2. Abandoned Outpost
+3. Ruined Infirmary
+4. Overgrown Greenhouse
+5. Guard Shack
+6. Crashed Transport
+7. Weapons Armory
+8. Command Center
+9. Sub-Level Reactor (Villain Room)
 
 ## Items
 
-With the minimum eight-room design, Project One requires at least six items.
-Every room except the start room and villain room must contain one item.
+With the minimum eight-room design, Project One requires at least six items. Every room except the start room and villain room must contain one item.
 
-1. TODO: Item
-2. TODO: Item
-3. TODO: Item
-4. TODO: Item
-5. TODO: Item
-6. TODO: Item
-
-If you add rooms beyond the minimum, add an item for every additional room
-except the start room and villain room.
+1. Geiger Counter
+2. Stimpak
+3. Water Purifier
+4. Solar Cell
+5. Security Keycard
+6. Plasma Cutter
 
 ## Villain
 
-TODO: Identify and briefly describe the villain.
+The Deathclaw: A massive, radiation-mutated apex predator lurking inside the Sub-Level Reactor.
 
 ## Storyboard and Map Check
 
-Before submitting, compare this storyboard with `game_map.drawio`.
+Before submitting, compare this storyboard with game_map.drawio .
 
-* [ ] I included eight (8) rooms.
-* [ ] I included six (6) collectable items.
-* [ ] The start room has no item.
-* [ ] The villain room has no item.
-* [ ] Every room except the start room and villain room contains one item.
-* [ ] Room, item, and villain names match my map.
-* [ ] The map allows the player to collect all required items before the
-  villain is encountered.
+- [x] I included eight (8) rooms.
+- [x] I included six (6) collectable items.
+- [x] The start room has no item.
+- [x] The villain room has no item.
+- [x] Every room except the start room and villain room contains one item.
+- [x] Room, item, and villain names match my map.
+- [x] The map allows the player to collect all required items before the villain is encountered.
 
 ## Project Two Handoff
 
-Keep this file after Project One. In Module Seven, use these names and design
-choices when building the final room/item dictionary and player-facing output.
+Keep this file after Project One. In Module Seven, use these names and design choices when building the final room/item dictionary and player-facing output.
