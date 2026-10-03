@@ -10,24 +10,51 @@
 START get_item
 
     # TODO 1: Identify the information the get-item process needs.
-    # Consider the current room, item in that room, and player's inventory.
+    # Define room items map and initialize player inventory array
+    SET room_items TO {
+        'Wasteland Entrance': None,
+        'Abandoned Outpost': 'Geiger Counter',
+        'Ruined Infirmary': 'Stimpak',
+        'Overgrown Greenhouse': 'Water Purifier',
+        'Guard Shack': 'Solar Cell',
+        'Crashed Transport': 'Security Keycard',
+        'Weapons Armory': 'Plasma Cutter',
+        'Command Center': None,
+        'Sub-Level Reactor': None
+    }
+    
+    SET inventory TO []
+    SET current_room TO 'Abandoned Outpost'
 
     # TODO 2: Prompt for and receive the player's get-item command.
+    OUTPUT "You are in the " + current_room + "."
+    OUTPUT "Enter an item to scavenge (e.g., 'get Geiger Counter'):"
+    INPUT player_command
+    
+    # Extract item name from input command
+    SET requested_item TO REMOVE_PREFIX(player_command, "get ")
+    SET available_item TO room_items[current_room]
 
-    # TODO 3: Validate whether the requested item is available in the current
-    # room. Show the decision clearly.
+    # TODO 3: Validate whether the requested item is available in the current room.
+    IF available_item IS NOT None AND LOWERCASE(requested_item) IS EQUAL TO LOWERCASE(available_item) THEN
+        
+        # TODO 4: Describe what happens when the item request is valid.
+        ADD available_item TO inventory
+        SET room_items[current_room] TO None
+        OUTPUT "Scavenged successfully! Added " + available_item + " to inventory."
+        
+    ELSE
+        
+        # TODO 5: Describe what happens when the item request is invalid.
+        IF available_item IS None THEN
+            OUTPUT "There are no salvageable items in this area."
+        ELSE
+            OUTPUT "That item is not here!"
+        END IF
+        
+    END IF
 
-    # TODO 4: Describe what happens when the item request is valid.
-    # Include the inventory update and player output.
-
-    # TODO 5: Describe what happens when the item request is invalid.
-    # Include the output the player should receive.
-
-    # TODO 6: Show how the process returns to or continues the larger gameplay
-    # loop after the command is handled.
+    # TODO 6: Show how the process returns to or continues the larger gameplay loop.
+    OUTPUT "Returning to main movement loop..."
 
 END get_item
-
-
-# References
-
