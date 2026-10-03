@@ -2,24 +2,46 @@
 #
 # Graded checkpoint: Module Five Project One
 # Later use: conceptual support for M6; movement design for M7
-#
-# Review the course-provided movement flowchart before completing this file.
-# Write pseudocode, not Python code. Use clear indentation and course-appropriate
-# keywords such as INPUT, OUTPUT, IF, ELSE, WHILE, SET, or similar terms.
 
 # TODO 1: Identify the information the movement process needs.
-# Consider the player's current room and movement command.
+# Rooms dictionary defining connections between facilities
+SET rooms TO {
+    'Wasteland Entrance': {'North': 'Abandoned Outpost'},
+    'Abandoned Outpost': {'South': 'Wasteland Entrance', 'East': 'Ruined Infirmary', 'West': 'Guard Shack'},
+    'Ruined Infirmary': {'West': 'Abandoned Outpost', 'North': 'Overgrown Greenhouse'},
+    'Overgrown Greenhouse': {'South': 'Ruined Infirmary'},
+    'Guard Shack': {'East': 'Abandoned Outpost', 'North': 'Crashed Transport'},
+    'Crashed Transport': {'South': 'Guard Shack', 'East': 'Weapons Armory'},
+    'Weapons Armory': {'West': 'Crashed Transport', 'North': 'Command Center'},
+    'Command Center': {'South': 'Weapons Armory', 'East': 'Sub-Level Reactor'},
+    'Sub-Level Reactor': {'West': 'Command Center'}
+}
 
-# TODO 2: Prompt for and receive the player's movement command.
-
-# TODO 3: Validate whether the requested movement is possible from the
-# current room. Show the decision clearly.
-
-# TODO 4: Describe what happens when the movement command is valid.
-# Include the room update and player output.
-
-# TODO 5: Describe what happens when the movement command is invalid.
-# Include the output the player should receive.
+# INITIALIZE game state
+SET current_room TO 'Wasteland Entrance'
 
 # TODO 6: Show how movement fits into repeated gameplay.
-# The final game continues accepting commands until a required ending occurs.
+# Main game loop continues until the player reaches the Sub-Level Reactor (Villain Room)
+WHILE current_room IS NOT EQUAL TO 'Sub-Level Reactor'
+    OUTPUT "You are currently in the " + current_room + "."
+    
+    # TODO 2: Prompt for and receive the player's movement command.
+    OUTPUT "Enter a direction to move (North, South, East, West):"
+    INPUT command
+    
+    # Standardize input for consistency
+    SET move_direction TO CAPITALIZE(command)
+    
+    # TODO 3: Validate whether the requested movement is possible from the current room.
+    IF move_direction IN rooms[current_room] THEN
+        # TODO 4: Describe what happens when the movement command is valid.
+        SET current_room TO rooms[current_room][move_direction]
+        OUTPUT "You traveled " + move_direction + " to the " + current_room + "."
+    ELSE
+        # TODO 5: Describe what happens when the movement command is invalid.
+        OUTPUT "The path is blocked by fallout debris! You can't go " + move_direction + "."
+    END IF
+END WHILE
+
+# Endgame state when reaching the Sub-Level Reactor
+OUTPUT "You have entered the Sub-Level Reactor! The Deathclaw confronts you!"
